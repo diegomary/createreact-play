@@ -4,16 +4,13 @@ import './App.css';
 class DangerButton extends Component {
   render() {
 
-  const divDangerStyle = {
-	  width:'20%',
+  const divDangerStyle = {	  
 	  color: 'blue',
-	  backgroundColor:'green'
-	};	
+	  backgroundColor:'yellow'
+	};
 
-    return (
-    	<div style={divDangerStyle}>
-    		<button className="danger-button">Press this button</button>
-		</div>
+    return (    	
+    		<button style={divDangerStyle} className="danger-button">{this.props.name}</button>		
     );
  
   }

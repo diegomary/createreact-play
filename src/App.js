@@ -19,9 +19,12 @@
 // https://facebook.github.io/react/docs/dom-elements.html
 //In React, all DOM properties and attributes (including event handlers) should be camelCased. 
 
+//https://facebook.github.io/flux/
+
 
 import React, { Component } from 'react';
 import './App.css';
+
 import DangerButton from './dangerbutton';
 
 class App extends Component {
@@ -54,9 +57,7 @@ fetch("https://jwt-diegomary.rhcloud.com/api/flowers",
 }
 
 componentWillMount() {}
-
 componentWillUnmount() {}
-
 
 shouldComponentUpdate(nextProps) {
   //return false; // the component won't rerender
@@ -97,12 +98,15 @@ render() {
 //https://facebook.github.io/react/docs/dom-elements.html
 
 let flowers = this.state.data.map(function(item) {
-    return (<p key = {item.Id}><span>{item.Name}</span>&nbsp;<textarea defaultValue={item.Description} rows="1" cols="100"></textarea></p>);
+    return (<p key = {item.Id}><span>{item.Name}</span>&nbsp;
+      <textarea defaultValue={item.Description} rows="1" cols="20"></textarea>
+      <DangerButton name={item._id}/>
+      </p>);
 });
 
 return (
   <div className="App">
-  <DangerButton />
+  <DangerButton name="Diego and MAry" />
   <input id="firstName" ref="firstName" type="text" value={this.state.message} onChange={this.handleChange}/>
   <button onClick={this.clickbutton.bind(this)}>Clickme</button>
   <p>{this.diego}</p> 
