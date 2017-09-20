@@ -44,9 +44,14 @@ componentDidMount() {
 // this is the right place to fetch data asyncronously.  
 // for a post example look at the following example
 // https://facebook.github.io/react-native/docs/network.html
-fetch("https://jwt-diegomary.rhcloud.com/api/flowers",
-  {method: 'GET',headers: {'Accept': 'application/json','Content-Type': 'application/json',}})
 
+
+// uncomment the following and comment the fetch from json file
+//fetch("https://jwt-diegomary.rhcloud.com/api/flowers",
+  //{method: 'GET',headers: {'Accept': 'application/json','Content-Type': 'application/json',}})
+
+
+fetch("./flowers.json")
       .then(response => response.json())
       .then(json => {
       this.diego="diego";       
@@ -80,13 +85,10 @@ handleChange = (event) => {
   this.setState({message: event.target.value});
 }
 
-
-
 clickbutton =() => {  
      //console.log(this.state.message);
      console.log(this.refs.firstName.value);
 }
-
 
 getInitialState() {
     return {message: 'Hello!'};
