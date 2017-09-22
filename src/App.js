@@ -28,6 +28,7 @@
 //https://egghead.io/lessons/javascript-redux-the-single-immutable-state-tree
 
 // Good example with redux
+// https://github.com/tstringer/create-react-app-with-redux
 
 import React, { Component } from 'react';
 import './App.css';
