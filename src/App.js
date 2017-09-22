@@ -27,6 +27,8 @@
 //https://egghead.io/courses/getting-started-with-redux
 //https://egghead.io/lessons/javascript-redux-the-single-immutable-state-tree
 
+// Good example with redux
+
 import React, { Component } from 'react';
 import './App.css';
 
