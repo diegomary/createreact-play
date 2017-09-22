@@ -11,7 +11,6 @@
 // for information about lifecycle hooks look the following
 // https://facebook.github.io/react/docs/react-component.html#shouldcomponentupdate
 
-
 // In React, state and props serve different goals: state allows a component to maintain 
 // some changing values, while props are the mecanism to propagate those values to children.
 
@@ -21,6 +20,12 @@
 
 //https://facebook.github.io/flux/
 
+// Important example with slingshot
+//https://scotch.io/tutorials/build-a-bookshop-with-react-redux-i-react-redux-flow
+
+// Video on redux
+//https://egghead.io/courses/getting-started-with-redux
+//https://egghead.io/lessons/javascript-redux-the-single-immutable-state-tree
 
 import React, { Component } from 'react';
 import './App.css';
@@ -41,6 +46,7 @@ constructor(props) {
 }
 
 componentDidMount() {
+  
 // this is the right place to fetch data asyncronously.  
 // for a post example look at the following example
 // https://facebook.github.io/react-native/docs/network.html
@@ -64,7 +70,8 @@ fetch("./flowers.json")
 componentWillMount() {}
 componentWillUnmount() {}
 
-shouldComponentUpdate(nextProps) {
+shouldComponentUpdate(nextProps,nextState) {
+  // here we can check to render only if certain stes or props have specific values
   //return false; // the component won't rerender
   return true; // The component will rerender
 }
@@ -108,7 +115,7 @@ let flowers = this.state.data.map(function(item) {
 
 return (
   <div className="App">
-  <DangerButton name="Diego and MAry" />
+  <DangerButton name="Diego and Mary" />
   <input id="firstName" ref="firstName" type="text" value={this.state.message} onChange={this.handleChange}/>
   <button onClick={this.clickbutton.bind(this)}>Clickme</button>
   <p>{this.diego}</p> 
